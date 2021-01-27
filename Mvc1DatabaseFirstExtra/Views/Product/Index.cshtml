@@ -1,0 +1,19 @@
+﻿@model Mvc1DatabaseFirstExtra.ViewModels.ProductIndexViewModel
+@{
+    ViewData["Title"] = "Produktsök";
+}
+
+
+<form asp-controller="Product" asp-action="Index" method="get">
+    Prod: <input asp-for="SearchWord" />
+    Cat: <input asp-for="SearchCategory" />
+    <button type="submit">Search</button>
+</form>
+
+<ul>
+    @foreach (var namn in Model.Names)
+    {
+        <li>@namn</li>
+    }
+
+</ul>

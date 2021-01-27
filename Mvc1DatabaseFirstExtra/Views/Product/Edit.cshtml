@@ -1,0 +1,20 @@
+﻿@model Mvc1DatabaseFirstExtra.ViewModels.ProductEditViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form asp-controller="Product" asp-action="Edit" method="post">
+    <input asp-for="ProductName" /> <br /><span asp-validation-for="ProductName"></span><br />
+    <input asp-for="Discontinued" /> <br /><span asp-validation-for="Discontinued"></span><br />
+    <button type="submit">Spara</button>
+</form>
+
+<hr/>
+<h1>Lista på alla dom 10 senaste ordrarna</h1>
+<ul>
+@foreach (var id in Model.LatestOrderNumbers)
+{
+    <li>@id</li>
+}
+</ul>
